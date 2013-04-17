@@ -1,0 +1,31 @@
+# -*- python -*-
+
+import os
+
+import waflib.Utils
+import waflib.Logs as msg
+
+PACKAGE = {
+    'name': 'gccxml',
+    'author': ['mana collaboration'],
+}
+
+def pkg_deps(ctx):
+    # FIXME
+    #ctx.use_pkg('External/AtlasCMake', private=True)    
+    return
+
+def options(ctx):
+    return
+
+def configure(ctx):
+    if not ctx.env.CXX:
+        ctx.fatal('Load a C++ compiler first')
+        return
+    
+    ctx.find_program('gccxml', var='GCCXML', mandatory=True)
+    return
+
+
+def build(ctx):
+    return

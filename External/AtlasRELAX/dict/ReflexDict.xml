@@ -1,0 +1,12 @@
+<lcgdict>
+  <class pattern="Reflex::*"/>
+  <exclusion>
+    <class pattern="Reflex::Any::Holder<*>"/>
+    <class name="Reflex::Any::Placeholder"/>
+    <class name="Reflex::PropertyList">
+      <method name="HasKey"/>
+      <method name="PropertySize"/>
+    </class>
+    <class name="std::vector<std::basic_string<char> >"/>
+  </exclusion>
+</lcgdict>
