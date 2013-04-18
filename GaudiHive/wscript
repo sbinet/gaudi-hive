@@ -37,6 +37,15 @@ def build(ctx):
                ]
         )
 
+    ctx.build_app(
+        name = 'concurrentRun',
+        source = 'src/bin/concurrentRun.cpp',
+        use = [
+            'GaudiKernel',
+            'boost',
+            ],
+        )
+
     return
 
 
