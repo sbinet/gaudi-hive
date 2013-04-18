@@ -7,7 +7,7 @@ import waflib.Utils
 from waflib.Utils import subst_vars
 
 PACKAGE = {
-    'name': 'External/AtlasHEPPDT',
+    'name': 'External/AtlasHepPDT',
     'author': ['gaudi collaboration'],
 }
 

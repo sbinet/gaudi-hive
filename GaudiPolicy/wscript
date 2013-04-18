@@ -792,18 +792,25 @@ def _fixup_pymodule_install(self, name, source, install_path_root):
     return
 
 ### -----------------------------------------------------------------------------
-def install_joboptions(self, source, **kw):
+def install_joboptions(self, source='share/*.py', cwd='share', **kw):
     
     # extract package name
     PACKAGE_NAME = _get_pkg_name(self)
 
-    jobo_dir = self.path.find_dir('share')
-    jobos = jobo_dir.ant_glob('**/*', dir=False)
+    source = waflib.Utils.to_list(source)
+    _srcs = []
+    for f in source:
+        _srcs.extend(self.path.ant_glob(f, dir=False))
+    source = _srcs[:]
+    del _srcs
     
+    if isinstance(cwd, str):
+        cwd = self.path.find_dir(cwd)
+
     self.install_files(
         '${INSTALL_AREA}/jobOptions/%s' % PACKAGE_NAME,
-        jobos,
-        cwd=jobo_dir,
+        source,
+        cwd=cwd,
         relative_trick=True
         )
     return

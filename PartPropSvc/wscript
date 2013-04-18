@@ -11,7 +11,7 @@ def pkg_deps(ctx):
     ctx.use_pkg('GaudiPolicy')
     ctx.use_pkg('GaudiKernel')
 
-    ctx.use_pkg('External/AtlasHEPPDT')
+    ctx.use_pkg('External/AtlasHepPDT')
     return
 
 def configure(ctx):
