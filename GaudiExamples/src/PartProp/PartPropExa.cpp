@@ -69,13 +69,13 @@ StatusCode PartPropExa::finalize() {
 
 namespace HepPDT {
 
-CommonParticleData*
+ParticleData*
 TestUnknownID::processUnknownID
               ( ParticleID key, const ParticleDataTable & pdt ) {
 
   std::cout << "TestUnknownID: " << key.PDTname() << std::endl;
 
-  CommonParticleData * cpd = 0;
+  ParticleData * cpd = 0;
   if( key.isNucleus() ) {
 
     // have to create a TempParticleData with all properties first
@@ -89,7 +89,7 @@ TestUnknownID::processUnknownID
       double protonMass = proton->mass();
       tpd.tempMass = Measurement(key.A()*protonMass, 0.);
       // now create CommonParticleData
-      cpd = new CommonParticleData(tpd);
+      cpd = new ParticleData(tpd);
     }
   }
   return cpd;
