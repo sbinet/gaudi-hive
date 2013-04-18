@@ -237,7 +237,7 @@ int main ( int argc, char** argv )
   po::options_description config("Configuration");
   config.add_options()
     ("configurable-module",
-     po::value<string>()->default_value("AthenaCommon"),
+     po::value<string>()->default_value("GaudiKernel"),
      "Name of the module holding the configurable classes")
     ("configurable-default-name",
      po::value<string>()->default_value("Configurable.DefaultName"),
