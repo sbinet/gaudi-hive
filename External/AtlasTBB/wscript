@@ -16,6 +16,7 @@ def pkg_deps(ctx):
     
 
 def options(ctx):
+    ctx.load('find_tbb')
     return
 
 def configure(ctx):
