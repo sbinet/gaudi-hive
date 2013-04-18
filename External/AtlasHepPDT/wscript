@@ -17,6 +17,7 @@ def pkg_deps(ctx):
     
 
 def options(ctx):
+    ctx.load('find_heppdt')
     return
 
 def configure(ctx):
