@@ -449,13 +449,15 @@ def _get_srcs_lst(self, source):
         if not srcs:
             # ok, try again from bldnode
             src_node = self.path.find_dir('src')
-            srcs = self.path.get_bld().ant_glob(source)
+            try:    srcs = self.path.get_bld().ant_glob(source)
+            except: pass
             if srcs:
                 # OK. finders, keepers.
                 pass
             elif src_node:
                 # hack to mimick CMT's default (to take sources from src)
-                srcs = src_node.get_bld().ant_glob(source)
+                try:    srcs = src_node.get_bld().ant_glob(source)
+                except: pass
                 pass
             if not srcs:
                 # ok, maybe the output of a not-yet executed task
