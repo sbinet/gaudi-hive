@@ -3,8 +3,7 @@
 
 #include "GaudiKernel/Algorithm.h"
 #include "HepPDT/ProcessUnknownID.hh"
-//#include "HepPDT/CommonParticleData.hh"
-#include "HepPDT/ParticleData.hh"
+#include "HepPDT/CommonParticleData.hh"
 
 class IPartPropSvc;
 
@@ -28,7 +27,7 @@ public:
   TestUnknownID() {}
 
   virtual 
-  ParticleData *processUnknownID( ParticleID, 
+  CommonParticleData *processUnknownID( ParticleID, 
 					const ParticleDataTable & pdt );
 
 };
