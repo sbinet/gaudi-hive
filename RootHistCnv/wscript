@@ -26,6 +26,7 @@ def build(ctx):
         source = 'src/*.cpp',
         use = [
             'GaudiKernel',
+            'AIDA',
             'ROOT',
             ],
         )

@@ -16,6 +16,7 @@ def pkg_deps(ctx):
     
     ctx.use_pkg('External/AtlasAIDA')
     ctx.use_pkg('External/AtlasBoost')
+    ctx.use_pkg('External/AtlasCLHEP')
     ctx.use_pkg('External/AtlasGSL')
     ctx.use_pkg('External/AtlasHepPDT')
     ctx.use_pkg('External/AtlasPython')
@@ -32,7 +33,9 @@ def build(ctx):
         name = 'GaudiExamplesLib',
         source = 'src/Lib/*.cpp',
         includes = 'src/Lib',
-        use = ['GaudiKernel',]
+        use = ['GaudiKernel',
+               'CLHEP',
+               ]
         )
     
     ctx.build_complib(

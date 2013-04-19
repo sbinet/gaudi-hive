@@ -20,6 +20,7 @@ def pkg_deps(ctx):
     return
 
 def options(ctx):
+    ctx.load('find_root')
     return
 
 def configure(ctx):

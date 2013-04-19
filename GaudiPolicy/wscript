@@ -23,11 +23,20 @@ PACKAGE = {
 def pkg_deps(ctx):
     return
 
+def options(ctx):
+    ctx.load('find_compiler')
+    print "+"*80
+    return
+
 def configure(ctx):
     msg.debug ('[configure] package name: '+PACKAGE['name'])
     # register this module for export
     ctx.hwaf_export_module("wscript")
 
+    print "+"*80
+    ctx.load('find_compiler')
+    ctx.find_cxx_compiler()
+    
     if not ctx.env.HWAF_FOUND_PYTHON:
         ctx.load('find_python')
         ctx.find_python()
@@ -106,7 +115,7 @@ def configure(ctx):
         ctx.env.append_unique('CXXFLAGS', subst('${COMMONFLAGS}').split())
         ctx.env.append_unique(
             'CXXFLAGS',
-            ['-std=c++11',
+            ['-std=c++0x',
              '-Wno-deprecated',
              ]
             )

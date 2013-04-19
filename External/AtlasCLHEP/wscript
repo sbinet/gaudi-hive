@@ -17,6 +17,7 @@ def pkg_deps(ctx):
     
 
 def options(ctx):
+    ctx.load('find_clhep')
     return
 
 def configure(ctx):

@@ -16,14 +16,24 @@ def pkg_deps(ctx):
     return
 
 def options(ctx):
+    ctx.load('find_gccxml')
     return
 
 def configure(ctx):
-    if not ctx.env.CXX:
-        ctx.fatal('Load a C++ compiler first')
-        return
+
+    if not ctx.env.HWAF_FOUND_CXX_COMPILER:
+        ctx.fatal('load a C++ compiler first')
+        pass
     
-    ctx.find_program('gccxml', var='GCCXML', mandatory=True)
+    if not ctx.env.HWAF_FOUND_GCCXML:
+        ctx.load('find_gccxml')
+        ctx.find_gccxml()
+        pass
+    
+    if not ctx.env.HWAF_FOUND_GCCXML:
+        ctx.fatal('no hepwaf configuration for gccxml')
+        pass
+
     return
 
 

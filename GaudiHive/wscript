@@ -37,6 +37,13 @@ def build(ctx):
                ]
         )
 
+    ctx.install_joboptions(
+        source=[
+            'options/*',
+            ],
+        cwd='options',
+        )
+
     ctx.build_app(
         name = 'concurrentRun',
         source = 'src/bin/concurrentRun.cpp',
