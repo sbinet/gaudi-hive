@@ -25,7 +25,6 @@ def pkg_deps(ctx):
 
 def options(ctx):
     ctx.load('find_compiler')
-    print "+"*80
     return
 
 def configure(ctx):
