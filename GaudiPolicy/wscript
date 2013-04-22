@@ -33,7 +33,6 @@ def configure(ctx):
     # register this module for export
     ctx.hwaf_export_module("wscript")
 
-    print "+"*80
     ctx.load('find_compiler')
     ctx.find_cxx_compiler()
     
