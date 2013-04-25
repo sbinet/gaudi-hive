@@ -36,7 +36,7 @@ $ cd work
 $ hwaf setup
 
 # checkout gaudi-hive, use wip/cmt-ng branch
-$ hwaf pkg co -b=wip/cmt-ng git@github.com:sbinet/gaudi-hive hive
+$ hwaf pkg co -b=wip/cmt-ng git://github.com/sbinet/gaudi-hive hive
 
 # finish bootstrap of gaudi-hive/hwaf
 $ hwaf setup -cmtpkgdir=src/hive -cfg=src/hive/hwaf-cfg/lcg-64d.conf
