@@ -42,6 +42,7 @@ def configure(ctx):
     ctx.load('python')
 
     ctx.env.GENCONF = 'genconf.exe'
+    ctx.env.GENCONF_CONFIGURABLE_MODULE = 'GaudiKernel'
     
     if ctx.is_darwin():
         # we really want .so and not .dylib...
@@ -979,7 +980,9 @@ def gen_conf_hook(self, node):
     return
 
 class gen_conf(waflib.Task.Task):
-    vars = ['GENCONF', 'DEFINES', 'INCLUDES']
+    vars = ['DEFINES', 'INCLUDES',
+            'GENCONF', 
+            'GENCONF_CONFIGURABLE_MODULE']
     color= 'BLUE'
     ext_in  = ['.bin', '.so']
     ext_out = ['.py']
@@ -990,7 +993,7 @@ class gen_conf(waflib.Task.Task):
     
     def run(self):
         import os
-        cmd = '${GENCONF} -p ${PACKAGE_NAME} -i %s -o ${GENCONF_OUTPUTDIR}' % (
+        cmd = '${GENCONF} -p ${PACKAGE_NAME} -i %s -o ${GENCONF_OUTPUTDIR} --configurable-module=${GENCONF_CONFIGURABLE_MODULE}' % (
             self.inputs[0].name,
             )
         cmd = waflib.Utils.subst_vars(cmd, self.env)
