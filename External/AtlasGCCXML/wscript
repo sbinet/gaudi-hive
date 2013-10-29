@@ -6,7 +6,7 @@ import waflib.Utils
 import waflib.Logs as msg
 
 PACKAGE = {
-    'name': 'gccxml',
+    'name': 'External/AtlasGCCXML',
     'author': ['mana collaboration'],
 }
 

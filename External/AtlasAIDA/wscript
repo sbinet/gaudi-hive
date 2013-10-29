@@ -4,7 +4,7 @@
 import waflib.Logs as msg
 
 PACKAGE = {
-    'name': 'aida',
+    'name': 'External/AtlasAIDA',
     'author': ['mana collaboration'],
 }
 

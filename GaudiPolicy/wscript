@@ -236,9 +236,9 @@ def configure(ctx):
         del ll
         pass
 
-    ctx.declare_runtime_env('JOBOPTSEARCHPATH')
-    ctx.declare_runtime_env('DATAPATH')
-    ctx.declare_runtime_env('XMLPATH')
+    ctx.hwaf_declare_runtime_env('JOBOPTSEARCHPATH')
+    ctx.hwaf_declare_runtime_env('DATAPATH')
+    ctx.hwaf_declare_runtime_env('XMLPATH')
 
 def build(ctx):
     return

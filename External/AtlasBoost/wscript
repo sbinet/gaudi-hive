@@ -8,7 +8,7 @@ import waflib.Logs as msg
 from waflib.Utils import subst_vars
 
 PACKAGE = {
-    'name': 'AtlasBoost',
+    'name': 'External/AtlasBoost',
     'author': ['mana collaboration'],
 }
 
