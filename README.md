@@ -45,8 +45,8 @@ $ cd work
 # bootstrap workarea
 $ hwaf setup -variant=x86_64-slc6-gcc46-opt
 
-# checkout gaudi-hive, use wip/cmt-ng branch
-$ hwaf pkg co -b=wip/cmt-ng git://github.com/sbinet/gaudi-hive hive
+# checkout gaudi-hive, use dev/hwaf branch
+$ hwaf pkg co -b=dev/hwaf git://github.com/sbinet/gaudi-hive hive
 
 # finish bootstrap of gaudi-hive/hwaf
 $ cat src/hive/hwaf-cfg/lcg-64d.conf >> local.conf
