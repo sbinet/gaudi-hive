@@ -27,6 +27,16 @@ $ gaudirun Hive.opts
 
 ## Installation with hwaf
 
+### Installation of ``hwaf``
+See [hwaf](https://github.com/hwaf/hwaf) for instructions to install ``hwaf``.
+On ``lxplus``, this can simply be done with:
+
+```sh
+$ . /afs/cern.ch/atlas/project/hwaf/sw/install/hwaf-VERSION/ARCH/setup-hwaf.sh
+```
+
+### Installation of ``hive``
+
 ```sh
 # create a workarea
 $ hwaf init work
