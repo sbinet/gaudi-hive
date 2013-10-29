@@ -40,10 +40,10 @@ def build(ctx):
         'scripts/*',
         ])
 
-    ctx.declare_runtime_alias("Gaudi", "Gaudi.exe")
-    ctx.declare_runtime_alias("GaudiRun", "gaudirun.py")
-    ctx.declare_runtime_alias("gaudirun", "gaudirun.py")
-    ctx.declare_runtime_alias("gaudipython", "python")
+    ctx.hwaf_declare_runtime_alias("Gaudi", "Gaudi.exe")
+    ctx.hwaf_declare_runtime_alias("GaudiRun", "gaudirun.py")
+    ctx.hwaf_declare_runtime_alias("gaudirun", "gaudirun.py")
+    ctx.hwaf_declare_runtime_alias("gaudipython", "python")
     return
 
 
