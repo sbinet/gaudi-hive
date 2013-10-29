@@ -33,13 +33,13 @@ $ hwaf init work
 $ cd work
 
 # bootstrap workarea
-$ hwaf setup
+$ hwaf setup -variant=x86_64-slc6-gcc46-opt
 
 # checkout gaudi-hive, use wip/cmt-ng branch
 $ hwaf pkg co -b=wip/cmt-ng git://github.com/sbinet/gaudi-hive hive
 
 # finish bootstrap of gaudi-hive/hwaf
-$ hwaf setup -cmtpkgdir=src/hive -cfg=src/hive/hwaf-cfg/lcg-64d.conf
+$ cat src/hive/hwaf-cfg/lcg-64d.conf >> local.conf
 
 # configure, make, make-install
 $ hwaf configure
@@ -48,6 +48,6 @@ $ hwaf
 # run
 $ hwaf shell 
 [hwaf] $ cd install-area/jobOptions/GaudiExamples
-[hwaf] $ gaudirun GaudiCommonTests.opts
+[hwaf] $ gaudirun.py GaudiCommonTests.opts
 ```
 
